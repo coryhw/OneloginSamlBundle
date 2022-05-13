@@ -79,6 +79,7 @@ class SamlAuthenticator implements AuthenticatorInterface, AuthenticationEntryPo
 
     public function authenticate(Request $request): Passport
     {
+        error_log('start authenticate');
         if (!$request->hasSession()) {
             throw new SessionUnavailableException('This authentication method requires a session.');
         }
