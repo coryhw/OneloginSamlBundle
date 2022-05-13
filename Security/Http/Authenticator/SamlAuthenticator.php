@@ -68,7 +68,6 @@ class SamlAuthenticator implements AuthenticatorInterface, AuthenticationEntryPo
 
     public function supports(Request $request): ?bool
     {
-        error_log('checking supports');
         return $request->isMethod('POST')
             && $this->httpUtils->checkRequestPath($request, $this->options['check_path']);
     }
